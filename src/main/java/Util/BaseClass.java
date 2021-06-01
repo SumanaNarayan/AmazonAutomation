@@ -28,7 +28,10 @@ public class BaseClass {
 	public static AppiumDriver<MobileElement> driver;
 	DesiredCapabilities cap = new DesiredCapabilities();
 	Properties prop=new Properties();
-	
+	/*
+	 * Description: Reusable function initialize the driver
+	 * Created By: Sumana 
+	 */
 	public void setup()
 	{
 		try {
@@ -53,6 +56,13 @@ public class BaseClass {
 	exp.printStackTrace();
 	}
 	}
+	/*
+	 * Description: Reusable function to wait for an element to be clickable
+	 * Created By: Sumana 
+	 * Attribute: Webelement- locator
+	 * 			  
+	 */
+
 	
 	public void waitForElementToBeClickable(WebElement identifier)
 	{
@@ -67,6 +77,11 @@ public class BaseClass {
 		}
 	}
 	
+	/*
+	 * Description: Reusable function to scroll the page
+	 * Created By: Sumana 
+	 
+	 */
 	public static void scrollDown(){
         Dimension dimension = driver.manage().window().getSize();
         int scrollStart = (int) (dimension.getHeight() * 0.5);
@@ -79,6 +94,11 @@ public class BaseClass {
                 .release().perform();
     }
 	
+	/*
+	 * Description: Reusable function to scroll and check and click an element is present in UI
+	 * Created By: Sumana 
+	 * Attribute: property- xpath value of the element to be identified
+	 */
 	public static void scrollNClick(WebElement el,Reporting report){
         int retry = 0;
         while(retry <= 5){
@@ -92,6 +112,11 @@ public class BaseClass {
             }
         }
     }
+	/*
+	 * Description: Reusable function to load the property File
+	 * Created By: Sumana
+	 * Attribute: path- Path of the property file
+	 */
 	
 	public Properties loadPropertyFile(String path)
 	{
@@ -106,6 +131,13 @@ public class BaseClass {
 		}
 		return prop;
 	}
+	/*
+	 * Description: Reusable function to click on an element
+	 * Created By: Sumana
+	 * Attribute: WebElement- locator 
+	 * 			  
+	 * 			  report- Class object of Reporting to generate extent report
+	 */
 	public void Click(WebElement el,Reporting report) 
 	{
 		try
